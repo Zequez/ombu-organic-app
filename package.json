@@ -1,0 +1,33 @@
+{
+  "name": "ombu-organic-app",
+  "version": "0.0.0",
+  "description": "A web/app that desires to grow and serve a more beautiful world",
+  "main": "index.js",
+  "repository": "https://github.com/Zequez/ombu-organic-app",
+  "author": "Ezequiel Schwartzman (Zequez) <zequez@gmail.com>",
+  "license": "AGPL-3.0-or-later",
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf dist .cache",
+    "serve": "browser-sync start -s dist -f dist --no-open",
+    "assemble": "webpack --mode=production",
+    "pug:data": "",
+    "pug:build": "pug src/pages/**/** assembled/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parcel:watch": "parcel watch src/pages/index.pug",
+    "parcel:build": "parcel build src/pages/index.pug",
+    "dev": "npm-run-all clean --parallel parcel:watch serve --print-label"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.10",
+    "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^3.0.0",
+    "sass": "^1.26.10",
+    "yaml": "^1.10.0"
+  },
+  "dependencies": {
+    "data": "^0.6.1"
+  }
+}
